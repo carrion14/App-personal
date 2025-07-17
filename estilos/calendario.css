@@ -1,0 +1,277 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #fff;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+button#createEventBtn,
+button#backBtn {
+  background: #f5f5f7;
+  border: 1px solid #d0d0d3;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #37352f;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+  box-shadow: none;
+}
+
+button#createEventBtn:hover,
+button#backBtn:hover {
+  background: #eaeaea;
+  border-color: #bfbfbf;
+}
+
+button#createEventBtn:active,
+button#backBtn:active {
+  background: #dcdcdc;
+  border-color: #a6a6a6;
+}
+
+#calendar {
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: none;
+  height: 50vh;
+  overflow-y: auto;
+}
+
+#calendar table {
+  width: 100%;
+  border-collapse: collapse;
+  user-select: none;
+}
+
+#calendar th,
+#calendar td {
+  width: 14.28%;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 8px;
+  position: relative;
+  font-weight: 500;
+  color: #37352f;
+}
+
+#calendar th {
+  color: #888;
+  font-weight: 600;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+#calendar td {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#calendar td:hover {
+  background-color: #eaeaea;
+}
+
+#calendar td.today {
+  background-color: #f0f5ff;
+  color: #0050e6;
+  font-weight: 700;
+  border: 1px solid #0050e6;
+}
+
+#calendar td.selected {
+  background-color: #d0e2ff;
+  color: #003a99;
+  font-weight: 700;
+  border: 1px solid #003a99;
+}
+
+/* Marcas de eventos en el calendario */
+.event-markers {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 90%;
+}
+
+.event-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+/* Limitar máximo 3 marcas visibles */
+.event-marker:nth-child(n+4) {
+  display: none;
+}
+
+#eventList {
+  margin-top: 20px;
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: none;
+  max-height: 30vh;
+  overflow-y: auto;
+  color: #37352f;
+}
+
+#eventList h3 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2f2f2f;
+}
+
+.event-item:last-child {
+  border-bottom: none;
+}
+
+.event-actions button {
+  background: none;
+  border: none;
+  color: #0050e6;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+.event-actions button:hover {
+  text-decoration: underline;
+}
+
+/* Modal para crear/editar evento */
+#eventModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  background: rgba(0,0,0,0.15);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#eventModal .modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  color: #1a1a1a;
+}
+
+#eventModal label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #37352f;
+}
+
+#eventModal input[type="text"],
+#eventModal input[type="date"],
+#eventModal input[type="time"],
+#eventModal select,
+#eventModal input[type="color"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d3;
+  font-size: 1rem;
+  color: #37352f;
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+#eventModal input[type="text"]:focus,
+#eventModal input[type="date"]:focus,
+#eventModal input[type="time"]:focus,
+#eventModal select:focus,
+#eventModal input[type="color"]:focus {
+  outline: none;
+  border-color: #0050e6;
+  box-shadow: 0 0 0 2px #cce0ff;
+}
+
+#timeRangeContainer {
+  margin-top: 10px;
+}
+
+#timeRangeContainer label {
+  margin-top: 12px;
+}
+
+#eventModal .modal-buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+#eventModal button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+#eventModal button.save-btn {
+  background-color: #0050e6;
+  color: white;
+}
+
+#eventModal button.save-btn:hover {
+  background-color: #003a99;
+}
+
+#eventModal button.cancel-btn {
+  background-color: #003a99
+}

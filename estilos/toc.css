@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #007aff;
+  background-color: #f0f8ff;
+  color: #007aff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #d0e7ff;
+}
+
+button:disabled {
+  background-color: #ccc;
+  border-color: #aaa;
+  color: #666;
+  cursor: not-allowed;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin: 8px 0 4px;
+  font-weight: 600;
+}
+
+.checkbox-group label,
+.radio-group label {
+  font-weight: 400;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.checkbox-group,
+.radio-group {
+  margin-top: 12px;
+}
+
+.alert {
+  background-color: #ffdddd;
+  border-radius: 8px;
+  padding: 12px;
+  color: #a00;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.back-button {
+  margin-top: 20px;
+  background-color: #eee;
+  color: #333;
+  border-color: #ccc;
+  width: auto;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.back-button:hover {
+  background-color: #ddd;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>App Personal - Inicio</title>
+<link rel="stylesheet" href="estilos/main.css" />
+<!-- Nombre que aparecerá bajo el icono -->
+<meta name="apple-mobile-web-app-title" content="NombreApp" />
+
+<!-- Habilita modo app a pantalla completa -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- Color de la barra de estado (solo en modo app) -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<!-- Iconos para la pantalla de inicio -->
+<link rel="apple-touch-icon" href="icon/icono.png" />
+</head>
+<body>
+
+<h1>Tareas de hoy</h1>
+
+<div id="todayTasks">
+  <h2>Calendario</h2>
+  <ul id="taskList"></ul>
+</div>
+
+<div class="button-container">
+  <button id="btnCalendar">Calendario</button>
+  <button id="btnToDo">To Do List</button>
+  <button id="btnTOC">TOC</button>
+  <button id="btnFinanzas">Finanzas</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
